@@ -15,7 +15,8 @@ namespace A_STAR_Algorithm
 
             //string cavernSource = "generated5000-1.cav";
             //Extracting the caverns list and conenction from the file.
-            CreateCavernList(args[0], caverns);
+            string inputFile = args[0] + ".cav";
+            CreateCavernList(inputFile, caverns);
 
             //Creating the list of unvisited caverns
             List<Cavern> unvisitedCaverns = new List<Cavern>();
@@ -59,9 +60,9 @@ namespace A_STAR_Algorithm
             }
 
             string route = string.Empty; //This string will store the route
-            string solutionFileName = args[0].Remove(args[0].Length - 4, 4); //Creating the FileName for the solution
-            solutionFileName = solutionFileName.Insert(0, "SOLUTION_");
-            solutionFileName += ".csn";
+            //string solutionFileName = args[0].Remove(args[0].Length - 4, 4); //Creating the FileName for the solution
+            //solutionFileName = solutionFileName.Insert(0, "SOLUTION_");
+            string solutionFileName = args[0] + ".csn";
 
             if (caverns.Last().PreviousCavern != -1) //Checking if we managed to find a route to the Target Cavern
             {
